@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Tabuada</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <main>
+        <div class="divisoria">
+            <div class="inserir">
+                <label for="intab">Tabuada do: </label>
+                <input type="number" name="ntab" id="intab" placeholder="Insira um número" required>
+            </div>
+        <div class="divisoria">
+            <input id="botao" type="button" value="Verificar" onclick="gerar()">
+        </div>
+        <div>
+            <select name="tab" id="itab" size="10"></select>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; Th</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

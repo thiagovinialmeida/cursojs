@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Básico</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <main>
+        <div class="divisoria">
+            <div class="inserir">
+                <label for="ifirst">Número Inicial:</label>
+                <input type="number" name="first" id="ifirst" placeholder="Começar a contar" required>
+            </div>
+            <div class="inserir">
+                <label for="iend">Número Final:</label>
+                <input type="number" name="end" id="iend" placeholder="Fim da contagem" required>
+            </div>
+            <div class="inserir">
+                <label for="ipasso">Número de passos:</label>
+                <input type="number" name="passo" id="ipasso" placeholder="Em quantos passos" required>
+            </div>
+        </div>
+        <div class="divisoria">
+            <input id="botao" type="button" value="Verificar" onclick="contar()">
+        </div>
+        <div class="divisoria" id="res">
+            Preencha os dados acima para ver o resultado
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Th</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

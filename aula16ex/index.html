@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Números</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+    <main>
+        <div class="divisoria">
+            <div class="inserir">
+                <label for="inum">Número (entre 1 e 100): </label>
+                <input type="number" name="num" id="inum" placeholder="Adicionar Número" required>
+            </div>
+        </div>
+        <div class="divisoria">
+            <input class="botao" type="button" value="Adicionar" onclick="adicionar()">
+        </div>
+        <div class="divisoria">
+            <select name="numsect" id="inumsect" size="10"></select>
+        </div>
+        <div class="divisoria">
+            <input class="botao" id="btnfinal" type="button" value="Finalizar" onclick="finalizar()">
+        </div>
+        <div class="divisoria" id="res">
+            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Th</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <script src="script.js"></script>
+    <style>
+        p{
+            background-color: blueviolet;
+            width: 200px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+            <label for="iidade">Informe seu ano de nascimento!</label>
+            <input type="number" name="idade" id="iidade"  placeholder="xxxx" size="4" required>
+            <button id="btnEnviar" onclick="calcular()">Enviar</button>
+            <p id="resultado">RESULTADO</p>
+    <script>
+        var ano = 2024
+        var y = window.document.getElementById('iidade')
+        var saida = window.document.getElementById('resultado')
+
+        function calcular(){
+            var idade = Number(y.value)
+            var res = ano - idade
+
+        if(res >= 18){
+            saida.innerHTML = `Você tem: ${res} anos de idade! Pode continuar.`
+            saida.style.background = 'green'
+        } else {
+            saida.innerHTML = `Você tem: ${res} anos de idade! Esse site não é pra você.`
+            saida.style.background = 'red'
+        }}
+    </script>
+</body>
+</html>

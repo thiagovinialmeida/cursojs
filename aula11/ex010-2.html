@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio</title>
+</head>
+<body>
+    <h1>Sua nascionalidade!</h1>
+    <P>Informe seu país</P>
+    <input type="text" name="txt" id="itxt">
+    <input type="button" value="Enviar" onclick="conferir()">
+    <div id="res">
+
+    </div>
+    <script>
+    function conferir(){
+        var country = document.getElementById('itxt')
+        var res = document.querySelector('div#res')
+        var s = String(country.value)
+
+        if(s == 'Brasil'){
+            res.innerHTML = `<p>Você é brasileiro!</p>`
+        } else {
+            res.innerHTML = `<p>Você é estrangeiro! Seja muito bem vindo</p>`
+            res.style.color = 'lightgreen'
+        }
+        }
+    </script>
+</body>
+</html>
