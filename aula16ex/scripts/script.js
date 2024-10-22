@@ -1,54 +1,68 @@
-/*
-function gerar(){
-    const restab = document.querySelector('#itab')
-    let num = Number(document.querySelector('#intab').value)
-
-    if(num != 0){
-        restab.innerHTML = ''
-    for(let tabuada = 1;tabuada <= 10;){
-        mult = num * tabuada
-        let opti = document.createElement('option')
-        opti.text = `${num} x ${tabuada} = ${mult}`
-        restab.appendChild(opti)
-        console.log(`${num} x ${tabuada} = ${mult}`)
-        tabuada++
-    }} else{
-        alert('Por favor, digite um número.')
-    }
-}
-}*/
-
-let selecao = []
+const selecnum = document.querySelector('#inumsect')
+const result = document.querySelector('#res')
+let numeroadd = document.querySelector('#inum')
+const selecao = []
 
 function adicionar(){
-    let numeroadd = Number(document.querySelector('#inum').value)
-    let selecnum = document.querySelector('#inumsect')
+    if(isRegra(numeroadd.value) && !inList(numeroadd.value, selecao)){
+        selecao.push(Number(numeroadd.value))
+        let opcao = document.createElement('option')
+        opcao.text = `Valor ${Number(numeroadd.value)} adcionado.`
+        selecnum.appendChild(opcao)
+    } else {
+        alert('O número informado não atende as especificações ou já está na lista')
+    }
+    numeroadd.value = ''
+    numeroadd.focus()
+}
 
-    let opcao = document.createElement('option')
-    selecnum.appendChild(opcao)
+function isRegra(z){
+    if(Number(z) >= 1 && Number(z) <= 100){
+        return true
+    }else{
+        return false
+    }
+}
 
-    selecao.push(numeroadd)
-    opcao.text = `Valor ${selecao} adcionado.`
+function inList(x, y){
+    if(y.indexOf(Number(x)) != -1){
+        return true
+    }else{
+        return false
+    }
 }
 
 function finalizar(){
-    const result = document.querySelector('#res')
-    
-    selecao.soft((a, b) => a - b)
-    let total = selecao.length 
-    let maior = selecao.pop
+
+//maior número e menor
+    let maior = selecao[0]
     let menor = selecao[0]
 
-
-    for(let indice = selecao.leght;indice > 0; indice--){
-        let soma = 0
-        let total = soma + selecao[indice]
+    for(let pos in selecao){
+        if(selecao[pos] > maior){
+            maior = selecao[pos]
+        }
+        if(selecao[pos] < menor){
+            menor = selecao[pos]
+        }
     }
 
+// Soma dos valores
+let soma = 0
+for(let indice = 0;indice < selecao.length;indice++){
+    soma += selecao[indice]
+    console.log(soma)
+}
 
-    result.innerHTML = `Ao todo, temos ${total} números cadastrados`
-    result.innerHTML = `O maior valor informado foi ${maior}`
-    result.innerHTML = `O menor valor informado foi ${menor}`
-    result.innerHTML = `Somando todos os valores, temos ${x}`
-    result.innerHTML = `A média dos valores digitados é ${x}`
+//médias
+    let x = selecao.length
+    let media = soma/x
+
+//resultados
+    result.innerHTML = ''
+    result.innerHTML += `<p>Ao todo, temos ${selecao.length} números cadastrados</p>`
+    result.innerHTML += `<p>O maior valor informado foi ${maior}</p>`
+    result.innerHTML += `<p>O menor valor informado foi ${menor}</p>`
+    result.innerHTML += `<p>Somando todos os valores, temos ${soma}</p>`
+    result.innerHTML += `<p>A média dos valores digitados é ${media}</p>`
 }
